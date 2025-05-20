@@ -5,7 +5,7 @@ const transactionModel = require('../models/transaction');
 const menuText = {
   en: {
     welcome: 'Welcome to Academic Info Service',
-    languageSelect: 'Select Language:\n1. English\n2. Swahili',
+    languageSelect: 'Select Language:\n1. English\n2. Kinyarwanda',
     mainMenu: 'Main Menu:\n1. Course Information\n2. Exam Schedule\n3. Fee Balance\n0. Exit',
     courseMenu: 'Course Information:\n1. Available Courses\n2. Course Requirements\n3. Course Duration\n0. Back',
     examMenu: 'Exam Schedule:\n1. Current Semester\n2. Next Semester\n0. Back',
@@ -14,14 +14,14 @@ const menuText = {
     exit: 'Thank you for using our service. Goodbye!'
   },
   sw: {
-    welcome: 'Karibu kwenye Huduma ya Taarifa za Elimu',
-    languageSelect: 'Chagua Lugha:\n1. Kiingereza\n2. Kiswahili',
-    mainMenu: 'Menyu Kuu:\n1. Taarifa za Kozi\n2. Ratiba ya Mitihani\n3. Salio la Ada\n0. Toka',
-    courseMenu: 'Taarifa za Kozi:\n1. Kozi Zinazopatikana\n2. Mahitaji ya Kozi\n3. Muda wa Kozi\n0. Rudi',
-    examMenu: 'Ratiba ya Mitihani:\n1. Muhula wa Sasa\n2. Muhula Ujao\n0. Rudi',
-    feeMenu: 'Taarifa za Ada:\n1. Angalia Salio\n2. Njia za Malipo\n0. Rudi',
-    invalidInput: 'Ingizo batili. Tafadhali jaribu tena.',
-    exit: 'Asante kwa kutumia huduma yetu. Kwaheri!'
+    welcome: 'Murakaza neza muri serivisi y`amakuru y`uburezi',
+    languageSelect: 'Hitamo ururimi:\n1. Icyongereza\n2. Ikinyarwanda',
+    mainMenu: 'Ibikubiye muri menu:\n1. Amakuru y`amasomo\n2. Gahunda y`ibizamini\n3. Asigaye mu mafagitire\n0. Gusohoka',
+    courseMenu: 'Amakuru y`amasomo:\n1. Amasomo aboneka\n2. Ibisabwa mu kwiga\n3. Igihe bimara\n0. Gusubira inyuma',
+    examMenu: 'Gahunda y`ibizamini:\n1. Igihembwe kiriho\n2. Igihembwe gitaha\n0. Gusubira inyuma',
+    feeMenu: 'Amakuru y`amafaranga:\n1. Kureba asigaye\n2. Uburyo bwo kwishyura\n0. Gusubira inyuma',
+    invalidInput: 'Ibyo wanditse ntibemewe. Ongera ugerageze.',
+    exit: 'Urakoze gukoresha serivisi yacu. Murabeho!'
   }
 };
 
@@ -33,9 +33,9 @@ const courseInfo = {
     duration: 'Course Duration:\n- Undergraduate: 4 years\n- Masters: 2 years\n- PhD: 3-5 years'
   },
   sw: {
-    available: 'Kozi Zinazopatikana:\n- Sayansi ya Kompyuta\n- Utawala wa Biashara\n- Uhandisi\n- Tiba',
-    requirements: 'Mahitaji ya Kozi:\n- Cheti cha Shule ya Sekondari\n- Mtihani wa Kuingia\n- Ada ya Maombi',
-    duration: 'Muda wa Kozi:\n- Shahada ya Kwanza: Miaka 4\n- Shahada ya Uzamili: Miaka 2\n- Shahada ya Uzamivu: Miaka 3-5'
+    available: 'Amasomo aboneka:\n- Ubuhanga bwa mudasobwa\n- Ubuyobozi bw`ubucuruzi\n- Ubuhanga\n- Ubuvuzi',
+    requirements: 'Ibisabwa mu kwiga:\n- Impamyabumenyi y`amashuri yisumbuye\n- Ikizamini cyo kwinjira\n- Amafaranga yo kwiyandikisha',
+    duration: 'Igihe bimara:\n- Impamyabumenyi ya mbere: Imyaka 4\n- Impamyabumenyi y`urwego rwo hejuru: Imyaka 2\n- Impamyabumenyi y`ubushakashatsi: Imyaka 3-5'
   }
 };
 
@@ -46,8 +46,8 @@ const examInfo = {
     next: 'Next Semester Exams:\n- Mid-term: March 10-15\n- Finals: May 1-10'
   },
   sw: {
-    current: 'Mitihani ya Muhula wa Sasa:\n- Katikati: Oktoba 15-20\n- Mwisho: Desemba 5-15',
-    next: 'Mitihani ya Muhula Ujao:\n- Katikati: Machi 10-15\n- Mwisho: Mei 1-10'
+    current: 'Ibizamini by`igihembwe kiriho:\n- Hagati: Ukwakira 15-20\n- Impera: Ukuboza 5-15',
+    next: 'Ibizamini by`igihembwe gitaha:\n- Hagati: Werurwe 10-15\n- Impera: Gicurasi 1-10'
   }
 };
 
@@ -58,8 +58,8 @@ const feeInfo = {
     payment: 'Payment Methods:\n- Bank Transfer\n- Mobile Money\n- Online Payment\n- Cash at Cashier'
   },
   sw: {
-    balance: 'Salio lako la sasa la ada ni $1,500',
-    payment: 'Njia za Malipo:\n- Uhamisho wa Benki\n- Pesa za Simu\n- Malipo ya Mtandaoni\n- Fedha Taslimu kwa Karani'
+    balance: 'Amafaranga asigaye ni $1,500',
+    payment: 'Uburyo bwo kwishyura:\n- Kohereza mu ibanki\n- Amafaranga kuri telefoni\n- Kwishyura kuri interineti\n- Amafaranga ku mwanditsi w`ibaruramari'
   }
 };
 
